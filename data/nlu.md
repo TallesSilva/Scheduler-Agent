@@ -1,13 +1,43 @@
 ## intent:greet
+- oi, tudo bem
+- como vai
+- oi, como vai voce
+- como vao as coisas
+- com licenca
+- posso falar com voce
+- pode me tirar uma duvida
+- gostaria de tirar uma duvida
+- muito bem
+- bom dia
+- boa tarde
+- boa noite
 - oi
 - ola
-- e ai
+- olá
+- oie
+- oiee
+- opa tudo bem
+- ola boa tarde
+- oii
+- oiii
+- iai
+- Ei
+- Oi bot
+- Oi maquina
+- Ei Bot
+- Oi novamente
+- oi amigo
+- olá robô
+- como vai robo
+- ei ei
+- olá amigo
+- OI
+- Olá
+- fala
+- e ae
 - eae
 - eai
-- tudo bem
-- tudo bom?
-- opa
-- fala
+- e ai
 - falai
 - como está?
 - o que vc faz?
@@ -25,6 +55,14 @@
 - ate
 - opa te+
 - te+
+- namaste
+- sayonara
+- blza
+- blz
+- até breve
+- até mais
+- até breve
+- bye
 
 ## intent:affirm
 - sim
@@ -38,6 +76,18 @@
 - posso
 - pode ser
 - pode
+- sim, quero reagendar
+- isso
+- sim, eu gostaria de reagendar
+- sim, quero reagendar
+- sim, quero
+- sim, por favor
+- sim, reagende 
+- sim, gostaria
+- sim, eu posso nesse horário
+- sim, estou disponível
+- isso ai
+- sim, nesse horário
 
 ## intent:deny
 - nao estou
@@ -53,6 +103,25 @@
 - nao, quero cancelar
 - nao quero
 - nao pode
+- nao quero saber mais
+- nao era isso, me enganei
+- escolhi errado
+- falei errado
+- não tenho um agendamento
+- não quero esse serviço
+- não conheço isso
+- não quero isso
+- não desejo esse serviço
+- não quero nessa data 
+- não quero nesse horário
+- não estou disponível
+- não posso nesse horário
+- não, quero cancelar
+- cancele esse serviço
+- cancele
+- não, vou ter que cancelar o serviço
+- não, por favor
+- noa
 
 ## intent:dunno
 - nao sei
@@ -71,23 +140,32 @@
 - acho
 
 ## intent:mood_great
-- perfect
-- very good
-- great
-- amazing
-- wonderful
-- I am feeling very good
-- I am great
-- I'm good
+- perfeito
+- muito bom
+- ótimo
+- maravilhoso
+- sensacional
+- eu estou me sentindo muito bem
+- eu estou ótimo
+- eu estou bem
 
 ## intent:mood_unhappy
-- sad
-- very sad
-- unhappy
-- bad
-- very bad
-- awful
-- terrible
-- not very good
-- extremely sad
-- so sad
+- triste
+- muito triste
+- infeliz
+- mal
+- muito mal
+- péssimo
+- terrível
+- não muito bem
+- extremamente triste
+- tão triste
+
+## intent: thanks
+- obrigado
+- valeu
+- obrigada
+- valeu, parsa
+- é isso ai
+- thanks
+- obg

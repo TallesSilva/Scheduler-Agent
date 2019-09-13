@@ -1,12 +1,31 @@
 # Configuration for Rasa NLU.
 # https://rasa.com/docs/rasa/nlu/components/
-language: en
-pipeline: supervised_embeddings
+language: pt
+
+pipeline:
+#- name: "WhitespaceTokenizer"
+- name: "CountVectorsFeaturizer"
+- name: "EmbeddingIntentClassifier"
+- name: "DucklingHTTPExtractor"
+  url: "http://localhost:8000"
+  locale: "pt_PT"
+  #url: "http://duckling:8000" 
 
 # Configuration for Rasa Core.
 # https://rasa.com/docs/rasa/core/policies/
 policies:
   - name: MemoizationPolicy
   - name: KerasPolicy
+    max_history: 10
+    core_threshold: 0.4
+    nlu_threshold: 0.3
+    rnn_size: 32
+    batch_size: 16
+    epochs: 80
+    validation_split: 0.25
+    # tracker_featurizer:
+    # - name: FullDialogueTrackerFeaturizer
+    #   state_featurizer:
+    #   - name: LabelTokenizerSingleStateFeaturizer
   - name: MappingPolicy
   - name: FormPolicy

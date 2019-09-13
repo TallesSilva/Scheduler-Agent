@@ -1,12 +1,13 @@
 intents:
-- greet
-- bye
-- affirm
-- deny
-- enter_data
-# - mood_great
-# - mood_unhappy
-- thanks
+  - greet
+  - bye
+  - affirm
+  - deny
+  - enter_data
+  - mood_great
+  - mood_unhappy
+  - thanks
+  - dunno
 
 slots:
   user_id:
@@ -21,8 +22,14 @@ slots:
     type: bool
   notification_confirm:
     type: bool
+  confirm_visit:
+    type: bool
   failed:
     type: bool
+  schedule_new_time:
+    type: unfeaturized
+  schedule_new_date:
+    type: unfeaturized
 
 entities:
 - name
@@ -32,67 +39,81 @@ entities:
 
 actions:
 - action_startup
+- action_set_visit
 - action_confirm_visit
 - action_enable_notification
 - action_farewell
+#- action_confirm_notification
 
 - utter_ask_reschedule
 - utter_ask_confirm_installation
 - utter_ask_confirm_notification
-- utter_acknowledge
+- utter_ask_confirm_visit
+#- utter_acknowledge
 - utter_greet
-- utter_cheer_up
-- utter_did_that_help
-- utter_happy
+#- utter_cheer_up
+#- utter_did_that_help
+# - utter_happy
 - utter_thanks
 - utter_acknowledge_thanks
 - utter_apologise
-- utter_confirm_installation
+#- utter_confirm_installation
 - utter_confirm_wrong
 - utter_farewell
+- utter_failure
+- utter_ask_schedule_new_date
+- utter_inform_new_date
 
 forms:
 - form_schedule
 
 templates:
-  utter_acknowledge:
-    - text: ""
-
+  #utter_acknowledge:
+  #  - text: ""
   utter_ask_confirm_installation:
-  - text: "Você está esperando a instalação de um modem de internet?"
+    - text: "Você está esperando a instalação de um modem de internet?"
 
   utter_greet:
     - text: "Bom dia! Sou a Tassia, inteligência artificial da Algar"
 
   utter_failure:
-    - text: ""
+    - text: "Encerrarei a conversa por falta de resposta."
 
-  utter_ask_confirm_visit:
-    - text: ""
+  #utter_cheer_up:
+  #  - text: ""
 
-  utter_cheer_up:
-    - text: ""
+  #utter_did_that_help:
+  #  - text: ""
 
-  utter_did_that_help:
-    - text: ""
-
-  utter_happy:
-    - text: ""
+  #utter_happy:
+  #  - text: ""
 
   utter_farewell:
-    - text: ""
+    - text: "Até mais"
 
   utter_ask_reschedule:
-    - text: ""
+    - text: "Você gostaria de reagendar o serviço?"
 
   utter_thanks:
-    - text: ""
+    - text: "Obrigado"
 
   utter_acknowledge_thanks:
-    - text: ""
+    - text: "Ok. Entre em contato se precisar de algo!"
 
   utter_apologise:
-    - text: ""
+    - text: "Desculpe o incômodo"
 
   utter_confirm_wrong:
-    - text: ""
+    - text: "Você confirma não estar esperando o serviço?"
+
+  utter_ask_confirm_notification:
+    - text: "Quer receber uma mensagem quando o técnico estiver em trajeto ao endereço?"
+  
+  utter_ask_confirm_visit:
+    - text: "Você gostaria de confirmar a visita?"
+
+  utter_ask_schedule_new_date:
+    - text: "Para qual data e horário?"
+
+  utter_inform_new_date:
+    - text: "Seu serviço foi reagendado para {schedule_new_date} às {schedule_new_time}. Posso confirmar esse horário?"
