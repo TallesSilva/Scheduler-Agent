@@ -7,7 +7,7 @@ from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
 
-
+DEFAULT_VISIT_TIME = 30  # in minutes
 SCOPES = ['https://www.googleapis.com/auth/calendar']
 CREDENTIALS = 'scheduler_agent/credentials.json'
 
@@ -41,8 +41,8 @@ def setup_interface():
         clean_up(ex)
 
 def date_to_str(date):
-        return date.strftime("%Y-%m-%dT%H:%M:%S")
-
+    return date.strftime("%Y-%m-%dT%H:%M:%S")
+    
 def fill_event_document(customer: dict,
                        start_date: str,
                        end_date: str):
@@ -63,7 +63,7 @@ def fill_event_document(customer: dict,
 def create_event(customer, start_date):
     service = setup_interface()
     
-    end_date = date_to_str(start_date + datetime.timedelta(minutes=30))
+    end_date = date_to_str(start_date + datetime.timedelta(minutes=DEFAULT_VISIT_TIME))
     start_date = date_to_str(start_date)
     
     event = fill_event_document(customer, start_date, end_date)
@@ -71,3 +71,5 @@ def create_event(customer, start_date):
         service.events().insert(calendarId='primary', body=event).execute()
     except Exception as ex:
         raise
+
+def get_timetable():
