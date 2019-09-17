@@ -70,6 +70,6 @@ def create_event(customer, start_date):
     try:
         service.events().insert(calendarId='primary', body=event).execute()
     except Exception as ex:
-        raise
-
+        raise 
 def get_timetable():
+    raise NotImplementedError
